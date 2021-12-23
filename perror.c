@@ -10,19 +10,18 @@
 
 int main (int argc, char **argv){
 
-    FILE * fp;
-    fp = open("file.txt",O_WRONLY);
+    int * fp = open("file.txt",O_WRONLY);
 
     if (fp == -1){
         int error = errno;
-        char *errorstr = strerror(errno);
-        
+      
 
         //Differents ways to print an error
         
-        //perror("open");                         //print -> open: No such file or directory
-        perror(errorstr);                         //print -> No such file or directory
-        //printf("%d:%s\n", error, errorstr);   
+        perror("open");  //open: No such file or directory
+        
+        char *errorstr = strerror(errno);
+        printf("Error code %d : %s\n", error, errorstr);   //Error code 2 : No such file or directory
 
         exit(1);
     }
