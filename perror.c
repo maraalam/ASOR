@@ -22,7 +22,7 @@ int main (int argc, char **argv){
         
         //perror("open");                         //print -> open: No such file or directory
         perror(errorstr);                         //print -> No such file or directory
-        //pritnf("%d:%s\n", error, errorstr);   
+        //printf("%d:%s\n", error, errorstr);   
 
         exit(1);
     }
